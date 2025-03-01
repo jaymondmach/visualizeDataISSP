@@ -11,7 +11,7 @@ async function handleLogin(event) {
   };
 
   try {
-    const response = await fetch("http://localhost:3000/login", {
+    const response = await fetch("http://localhost:4000/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -24,6 +24,9 @@ async function handleLogin(event) {
       document.getElementById("login-form").style.display = "none";
       document.getElementById("data-content").style.display = "block";
       console.log("Login successful!");
+
+      // Automatically update data after login
+      await updateData();
     } else {
       // Show error message if login fails
       document.getElementById("login-error").style.display = "block";
@@ -42,7 +45,7 @@ async function updateData() {
   };
 
   try {
-    const response = await fetch("http://localhost:3000/data", {
+    const response = await fetch("http://localhost:4000/data", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -66,6 +66,6 @@ app.post("/data", (req, res) => {
 });
 
 // Start the server
-app.listen(3000, () => {
-  console.log("Server running on http://localhost:3000");
+app.listen(4000, () => {
+  console.log("Server running on http://localhost:4000");
 });
